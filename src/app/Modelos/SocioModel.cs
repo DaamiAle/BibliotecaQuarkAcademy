@@ -1,7 +1,7 @@
 ﻿
 namespace BibliotecaQuarkAcademy.src.app.Modelos
 {
-    public class Socio
+    public class SocioModel
     {
         // Atributos
         private int id;

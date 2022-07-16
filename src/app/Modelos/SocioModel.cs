@@ -4,15 +4,16 @@ namespace BibliotecaQuarkAcademy.src.app.Modelos
     public class SocioModel
     {
         // Atributos
-        private int id;
-        private string nombre;
-        private string apellido;
-        private int numIdentificacion;
-        private bool esVIP;
-        private int cuotaSocio = 0;
+        protected int id;
+        protected string nombre;
+        protected string apellido;
+        protected int numIdentificacion;
+        protected EjemplarModel[] ejemplaresRetirados;
+        
 
         // Propiedades
         public int Id() => id;
+
         public void Id(int value) => id = value;
         public string Nombre() => nombre;
         public void Nombre(string value) => nombre = value;
@@ -20,9 +21,8 @@ namespace BibliotecaQuarkAcademy.src.app.Modelos
         public void Apellido(string value) => apellido = value;
         public int NumIdentificacion() => numIdentificacion;
         public void NumIdentificacion(int value) => numIdentificacion = value;
-        public bool EsVIP() => esVIP;
-        public void EsVIP(bool value) => esVIP = value;
-        public int CuotaSocio() => cuotaSocio;
-        public void CuotaSocio(int value) => cuotaSocio = value;
+        public EjemplarModel[] EjemplaresRetirados() => ejemplaresRetirados;
+        public void EjemplaresRetirados(EjemplarModel[] value) => ejemplaresRetirados = value;
+        public virtual int MaxEjempRetirados() => 1;
     }
 }

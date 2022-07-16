@@ -1,4 +1,4 @@
-namespace BibliotecaQuarkAcademy
+namespace BibliotecaQuarkAcademy.src.app
 {
     internal static class Program
     {
@@ -8,6 +8,9 @@ namespace BibliotecaQuarkAcademy
         [STAThread]
         static void Main()
         {
+            ProjectContext database = new ProjectContext();
+            database.Database.EnsureCreated();
+            database.SaveChanges();
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();

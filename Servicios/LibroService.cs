@@ -1,6 +1,6 @@
-﻿using BibliotecaQuarkAcademy.src.app.Repositorios;
-using BibliotecaQuarkAcademy.src.app.DataObjects;
-using BibliotecaQuarkAcademy.src.app.Modelos;
+﻿using Repositorios;
+using DataObjects;
+using Models;
 
 namespace Services
 {

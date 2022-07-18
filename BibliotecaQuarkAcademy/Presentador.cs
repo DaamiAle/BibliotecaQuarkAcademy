@@ -1,5 +1,4 @@
-﻿using BibliotecaQuarkAcademy.src.app.DataObjects;
-using BibliotecaQuarkAcademy.src.app.Servicios;
+﻿using Services;
 
 namespace BibliotecaQuarkAcademy
 {

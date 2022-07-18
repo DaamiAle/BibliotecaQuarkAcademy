@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace BibliotecaQuarkAcademy.src.app.Modelos
+namespace Models
 {
     [Index(nameof(CodigoISBN),IsUnique = true)]
     public class LibroModel

@@ -495,6 +495,68 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
+      "DataObjects/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/DataObjects.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataObjects.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.7"
+        },
+        "compile": {
+          "bin/placeholder/Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "Repositories/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Repositories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Repositories.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DataObjects": "1.0.0",
+          "Repositories": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
       "Views/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1250,6 +1312,26 @@
         "version.txt"
       ]
     },
+    "DataObjects/1.0.0": {
+      "type": "project",
+      "path": "../DataObjects/DataObjects.csproj",
+      "msbuildProject": "../DataObjects/DataObjects.csproj"
+    },
+    "Models/1.0.0": {
+      "type": "project",
+      "path": "../Models/Models.csproj",
+      "msbuildProject": "../Models/Models.csproj"
+    },
+    "Repositories/1.0.0": {
+      "type": "project",
+      "path": "../Repositories/Repositories.csproj",
+      "msbuildProject": "../Repositories/Repositories.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Servicios/Services.csproj",
+      "msbuildProject": "../Servicios/Services.csproj"
+    },
     "Views/1.0.0": {
       "type": "project",
       "path": "../Views/Views.csproj",
@@ -1261,6 +1343,7 @@
       "Microsoft.EntityFrameworkCore >= 6.0.7",
       "Microsoft.EntityFrameworkCore.Sqlite >= 6.0.7",
       "Moq >= 4.18.1",
+      "Services >= 1.0.0",
       "Views >= 1.0.0"
     ]
   },
@@ -1296,6 +1379,9 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
+            "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Servicios\\Services.csproj": {
+              "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Servicios\\Services.csproj"
+            },
             "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Views\\Views.csproj": {
               "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Views\\Views.csproj"
             }

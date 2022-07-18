@@ -1,4 +1,5 @@
-﻿using BibliotecaQuarkAcademy.src.app.Modelos;
+﻿using BibliotecaQuarkAcademy;
+using Models;
 
 namespace Repositories
 {

@@ -1,0 +1,15 @@
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Repositories\obj\Debug\net6.0-windows\Repositories.csproj.AssemblyReference.cache
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Repositories\obj\Debug\net6.0-windows\Repositories.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Repositories\obj\Debug\net6.0-windows\Repositories.AssemblyInfoInputs.cache
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Repositories\obj\Debug\net6.0-windows\Repositories.AssemblyInfo.cs
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Repositories\obj\Debug\net6.0-windows\Repositories.csproj.CoreCompileInputs.cache
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Repositories\bin\Debug\net6.0-windows\Repositories.deps.json
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Repositories\bin\Debug\net6.0-windows\Repositories.dll
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Repositories\bin\Debug\net6.0-windows\Repositories.pdb
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Repositories\bin\Debug\net6.0-windows\Models.dll
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Repositories\bin\Debug\net6.0-windows\Models.pdb
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Repositories\obj\Debug\net6.0-windows\Repositories.csproj.CopyComplete
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Repositories\obj\Debug\net6.0-windows\Repositories.dll
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Repositories\obj\Debug\net6.0-windows\refint\Repositories.dll
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Repositories\obj\Debug\net6.0-windows\Repositories.pdb
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Repositories\obj\Debug\net6.0-windows\ref\Repositories.dll

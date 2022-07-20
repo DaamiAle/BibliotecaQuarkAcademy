@@ -2,18 +2,6 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
-      "Castle.Core/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Diagnostics.EventLog": "6.0.0"
-        },
-        "compile": {
-          "lib/net6.0/Castle.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0/Castle.Core.dll": {}
-        }
-      },
       "Microsoft.Data.Sqlite.Core/6.0.7": {
         "type": "package",
         "dependencies": {
@@ -245,19 +233,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Moq/4.18.1": {
-        "type": "package",
-        "dependencies": {
-          "Castle.Core": "5.0.0",
-          "System.Threading.Tasks.Extensions": "4.5.4"
-        },
-        "compile": {
-          "lib/net6.0/Moq.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0/Moq.dll": {}
-        }
-      },
       "SQLitePCLRaw.bundle_e_sqlite3/2.0.6": {
         "type": "package",
         "dependencies": {
@@ -406,28 +381,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "System.Diagnostics.EventLog/6.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/System.Diagnostics.EventLog.dll": {}
-        },
-        "runtime": {
-          "lib/net6.0/System.Diagnostics.EventLog.dll": {}
-        },
-        "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          },
-          "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
       "System.Memory/4.5.4": {
         "type": "package",
         "compile": {
@@ -486,15 +439,6 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "System.Threading.Tasks.Extensions/4.5.4": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/_._": {}
-        }
-      },
       "DataObjects/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -512,7 +456,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "6.0.7"
+          "Microsoft.EntityFrameworkCore": "6.0.7",
+          "Microsoft.EntityFrameworkCore.Sqlite": "6.0.7"
         },
         "compile": {
           "bin/placeholder/Models.dll": {}
@@ -528,6 +473,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.7",
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.7",
+          "Microsoft.EntityFrameworkCore.Sqlite": "6.0.7",
           "Models": "1.0.0"
         },
         "compile": {
@@ -545,7 +493,10 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "DataObjects": "1.0.0",
-          "Repositories": "1.0.0"
+          "Microsoft.EntityFrameworkCore": "6.0.7",
+          "Microsoft.EntityFrameworkCore.Sqlite": "6.0.7",
+          "Repositories": "1.0.0",
+          "Util": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Services.dll": {}
@@ -557,9 +508,27 @@
           "Microsoft.WindowsDesktop.App.WindowsForms"
         ]
       },
+      "Util/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Util.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Util.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
       "Views/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.7",
+          "Microsoft.EntityFrameworkCore.Sqlite": "6.0.7",
+          "Services": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Views.dll": {}
         },
@@ -573,30 +542,6 @@
     }
   },
   "libraries": {
-    "Castle.Core/5.0.0": {
-      "sha512": "edc8jjyXqzzy8jFdhs36FZdwmlDDTgqPb2Zy1Q5F/f2uAc88bu/VS/0Tpvgupmpl9zJOvOo5ZizVANb0ltN1NQ==",
-      "type": "package",
-      "path": "castle.core/5.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ASL - Apache Software Foundation License.txt",
-        "CHANGELOG.md",
-        "LICENSE",
-        "castle-logo.png",
-        "castle.core.5.0.0.nupkg.sha512",
-        "castle.core.nuspec",
-        "lib/net462/Castle.Core.dll",
-        "lib/net462/Castle.Core.xml",
-        "lib/net6.0/Castle.Core.dll",
-        "lib/net6.0/Castle.Core.xml",
-        "lib/netstandard2.0/Castle.Core.dll",
-        "lib/netstandard2.0/Castle.Core.xml",
-        "lib/netstandard2.1/Castle.Core.dll",
-        "lib/netstandard2.1/Castle.Core.xml",
-        "readme.txt"
-      ]
-    },
     "Microsoft.Data.Sqlite.Core/6.0.7": {
       "sha512": "lB8T+Y/5pMDBf13dGnrQvZ9rfkZrvRY82FgVElWGIuIF3yFwYLR6475U4/IM+TNLPSk8SvTFBqdLN3gOm3suOQ==",
       "type": "package",
@@ -942,26 +887,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Moq/4.18.1": {
-      "sha512": "MmZIKNyvn8VrivSaqA8tqy5DmwUievC9zsuNTrcb00oY4IeGq6fXT5BQK329lZ05/tyi5vp30AWe9fl0d2PZQg==",
-      "type": "package",
-      "path": "moq/4.18.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net462/Moq.dll",
-        "lib/net462/Moq.xml",
-        "lib/net6.0/Moq.dll",
-        "lib/net6.0/Moq.xml",
-        "lib/netstandard2.0/Moq.dll",
-        "lib/netstandard2.0/Moq.xml",
-        "lib/netstandard2.1/Moq.dll",
-        "lib/netstandard2.1/Moq.xml",
-        "moq.4.18.1.nupkg.sha512",
-        "moq.nuspec",
-        "moq.png"
-      ]
-    },
     "SQLitePCLRaw.bundle_e_sqlite3/2.0.6": {
       "sha512": "zssYqiaucyGArZfg74rJuzK0ewgZiidsRVrZTmP7JLNvK806gXg6PGA46XzoJGpNPPA5uRcumwvVp6YTYxtQ5w==",
       "type": "package",
@@ -1115,37 +1040,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Diagnostics.EventLog/6.0.0": {
-      "sha512": "lcyUiXTsETK2ALsZrX+nWuHSIQeazhqPphLfaRxzdGaG93+0kELqpgEHtwWOlQe7+jSFnKwaCAgL4kjeZCQJnw==",
-      "type": "package",
-      "path": "system.diagnostics.eventlog/6.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/netcoreapp2.0/System.Diagnostics.EventLog.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/System.Diagnostics.EventLog.dll",
-        "lib/net461/System.Diagnostics.EventLog.xml",
-        "lib/net6.0/System.Diagnostics.EventLog.dll",
-        "lib/net6.0/System.Diagnostics.EventLog.xml",
-        "lib/netcoreapp3.1/System.Diagnostics.EventLog.dll",
-        "lib/netcoreapp3.1/System.Diagnostics.EventLog.xml",
-        "lib/netstandard2.0/System.Diagnostics.EventLog.dll",
-        "lib/netstandard2.0/System.Diagnostics.EventLog.xml",
-        "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll",
-        "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.dll",
-        "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.xml",
-        "runtimes/win/lib/netcoreapp3.1/System.Diagnostics.EventLog.Messages.dll",
-        "runtimes/win/lib/netcoreapp3.1/System.Diagnostics.EventLog.dll",
-        "runtimes/win/lib/netcoreapp3.1/System.Diagnostics.EventLog.xml",
-        "system.diagnostics.eventlog.6.0.0.nupkg.sha512",
-        "system.diagnostics.eventlog.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
     "System.Memory/4.5.4": {
       "sha512": "1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
       "type": "package",
@@ -1275,43 +1169,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Threading.Tasks.Extensions/4.5.4": {
-      "sha512": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
-      "type": "package",
-      "path": "system.threading.tasks.extensions/4.5.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net461/System.Threading.Tasks.Extensions.dll",
-        "lib/net461/System.Threading.Tasks.Extensions.xml",
-        "lib/netcoreapp2.1/_._",
-        "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
-        "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
-        "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll",
-        "lib/netstandard2.0/System.Threading.Tasks.Extensions.xml",
-        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll",
-        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/netcoreapp2.1/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-        "system.threading.tasks.extensions.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
     "DataObjects/1.0.0": {
       "type": "project",
       "path": "../DataObjects/DataObjects.csproj",
@@ -1332,6 +1189,11 @@
       "path": "../Servicios/Services.csproj",
       "msbuildProject": "../Servicios/Services.csproj"
     },
+    "Util/1.0.0": {
+      "type": "project",
+      "path": "../Util/Util.csproj",
+      "msbuildProject": "../Util/Util.csproj"
+    },
     "Views/1.0.0": {
       "type": "project",
       "path": "../Views/Views.csproj",
@@ -1342,8 +1204,6 @@
     "net6.0-windows7.0": [
       "Microsoft.EntityFrameworkCore >= 6.0.7",
       "Microsoft.EntityFrameworkCore.Sqlite >= 6.0.7",
-      "Moq >= 4.18.1",
-      "Services >= 1.0.0",
       "Views >= 1.0.0"
     ]
   },
@@ -1379,9 +1239,6 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Servicios\\Services.csproj": {
-              "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Servicios\\Services.csproj"
-            },
             "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Views\\Views.csproj": {
               "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Views\\Views.csproj"
             }
@@ -1405,10 +1262,6 @@
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",
             "version": "[6.0.7, )"
-          },
-          "Moq": {
-            "target": "Package",
-            "version": "[4.18.1, )"
           }
         },
         "imports": [

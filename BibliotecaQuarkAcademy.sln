@@ -5,15 +5,17 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BibliotecaQuarkAcademy", "BibliotecaQuarkAcademy\BibliotecaQuarkAcademy.csproj", "{F28B005F-DA78-4740-B6FA-03C929D76157}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Servicios\Services.csproj", "{B46E55B1-BC6F-47F2-BEC4-EC67E9189624}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Servicios\Services.csproj", "{B46E55B1-BC6F-47F2-BEC4-EC67E9189624}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{CA360C4A-8B33-45CE-A3B2-56FB6C0C10D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{CA360C4A-8B33-45CE-A3B2-56FB6C0C10D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataObjects", "DataObjects\DataObjects.csproj", "{4D1B2A6A-072B-4FF4-A202-6A838D8C47AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataObjects", "DataObjects\DataObjects.csproj", "{4D1B2A6A-072B-4FF4-A202-6A838D8C47AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{0DB44214-14B4-44C1-AC80-D2AC2B966F00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{0DB44214-14B4-44C1-AC80-D2AC2B966F00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Views", "Views\Views.csproj", "{FEF9E846-AE8A-45F0-B082-422444D84047}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Views", "Views\Views.csproj", "{FEF9E846-AE8A-45F0-B082-422444D84047}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Util", "Util\Util.csproj", "{6103EB1B-7BDF-4282-A05B-1D4AADDA641F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{FEF9E846-AE8A-45F0-B082-422444D84047}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEF9E846-AE8A-45F0-B082-422444D84047}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEF9E846-AE8A-45F0-B082-422444D84047}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6103EB1B-7BDF-4282-A05B-1D4AADDA641F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6103EB1B-7BDF-4282-A05B-1D4AADDA641F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6103EB1B-7BDF-4282-A05B-1D4AADDA641F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6103EB1B-7BDF-4282-A05B-1D4AADDA641F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,7 +3,6 @@ C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\BibliotecaQuarkAcademy.runtimeconfig.json
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\BibliotecaQuarkAcademy.dll
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\BibliotecaQuarkAcademy.pdb
-C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\Castle.Core.dll
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\Microsoft.Data.Sqlite.dll
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -19,7 +18,6 @@ C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
-C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\Moq.dll
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\SQLitePCLRaw.batteries_v2.dll
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\SQLitePCLRaw.core.dll
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\SQLitePCLRaw.provider.e_sqlite3.dll
@@ -38,10 +36,7 @@ C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\runtimes\win-x86\native\e_sqlite3.dll
-C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\obj\Debug\net6.0-windows\BibliotecaQuarkAcademy.csproj.AssemblyReference.cache
-C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\obj\Debug\net6.0-windows\BibliotecaQuarkAcademy.Form1.resources
-C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\obj\Debug\net6.0-windows\BibliotecaQuarkAcademy.csproj.GenerateResource.cache
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\obj\Debug\net6.0-windows\BibliotecaQuarkAcademy.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\obj\Debug\net6.0-windows\BibliotecaQuarkAcademy.AssemblyInfoInputs.cache
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\obj\Debug\net6.0-windows\BibliotecaQuarkAcademy.AssemblyInfo.cs
@@ -52,3 +47,15 @@ C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\obj
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\obj\Debug\net6.0-windows\BibliotecaQuarkAcademy.pdb
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\obj\Debug\net6.0-windows\BibliotecaQuarkAcademy.genruntimeconfig.cache
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\obj\Debug\net6.0-windows\ref\BibliotecaQuarkAcademy.dll
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\DataObjects.dll
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\Models.dll
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\Repositories.dll
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\Services.dll
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\Util.dll
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\Views.dll
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\Views.pdb
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\DataObjects.pdb
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\Models.pdb
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\Repositories.pdb
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\Services.pdb
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\BibliotecaQuarkAcademy\bin\Debug\net6.0-windows\Util.pdb

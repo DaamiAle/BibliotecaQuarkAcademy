@@ -4,14 +4,14 @@
     "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Views\\Views.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Views\\Views.csproj": {
+    "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\DataObjects\\DataObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Views\\Views.csproj",
-        "projectName": "Views",
-        "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Views\\Views.csproj",
+        "projectUniqueName": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\DataObjects\\DataObjects.csproj",
+        "projectName": "DataObjects",
+        "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\DataObjects\\DataObjects.csproj",
         "packagesPath": "C:\\Users\\DaamiAle\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Views\\obj\\",
+        "outputPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\DataObjects\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,373 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Models\\Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Models\\Models.csproj",
+        "projectName": "Models",
+        "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\DaamiAle\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\DaamiAle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Repositories\\Repositories.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Repositories\\Repositories.csproj",
+        "projectName": "Repositories",
+        "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Repositories\\Repositories.csproj",
+        "packagesPath": "C:\\Users\\DaamiAle\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Repositories\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\DaamiAle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {
+              "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Models\\Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Servicios\\Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Servicios\\Services.csproj",
+        "projectName": "Services",
+        "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Servicios\\Services.csproj",
+        "packagesPath": "C:\\Users\\DaamiAle\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Servicios\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\DaamiAle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {
+              "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\DataObjects\\DataObjects.csproj": {
+                "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\DataObjects\\DataObjects.csproj"
+              },
+              "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Repositories\\Repositories.csproj": {
+                "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Repositories\\Repositories.csproj"
+              },
+              "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Util\\Util.csproj": {
+                "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Util\\Util.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Util\\Util.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Util\\Util.csproj",
+        "projectName": "Util",
+        "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Util\\Util.csproj",
+        "packagesPath": "C:\\Users\\DaamiAle\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Util\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\DaamiAle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Views\\Views.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Views\\Views.csproj",
+        "projectName": "Views",
+        "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Views\\Views.csproj",
+        "packagesPath": "C:\\Users\\DaamiAle\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Views\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\DaamiAle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {
+              "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Servicios\\Services.csproj": {
+                "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Servicios\\Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

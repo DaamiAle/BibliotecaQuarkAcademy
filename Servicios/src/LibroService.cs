@@ -1,7 +1,8 @@
-﻿using Models.src;
-using DataObjects.src;
+﻿using DataObjects.src;
 using Repositories.src;
 using Util.src.CustomExceptions.LibroExceptions;
+using Models.src.DatabaseContext;
+using Models.src.Entities;
 
 namespace Services.src
 {
@@ -13,7 +14,7 @@ namespace Services.src
         {
             libroReposytory = new LibroRepository(context);
         }
-
+        /*
         internal LibroModel GetModelByISBN(string codigoISBN)
         {
             LibroModel libroModel = libroReposytory.GetByISBN(codigoISBN);
@@ -45,5 +46,6 @@ namespace Services.src
             libroModel.Autor=libroDTO.Autor();
             return libroReposytory.AgregarLibro(libroModel);
         }
+        */
     }
 }

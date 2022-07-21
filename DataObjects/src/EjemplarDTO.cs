@@ -6,8 +6,7 @@
         private LibroDTO libro;
         private int numEdicion;
         private string ubicacion;
-        private SocioDTO socioPoseedor;
-
+        private PrestamoDTO prestamo;
 
 
         // Propiedades
@@ -17,7 +16,7 @@
         public void NumEdicion(int value) => numEdicion = value;
         public string Ubicacion() => ubicacion;
         public void Ubicacion(string value) => ubicacion = value;
-        public SocioDTO SocioPoseedor() => socioPoseedor;
-        public void SocioPoseedor(SocioDTO value) => socioPoseedor = value;
+        public PrestamoDTO EstaPrestado() => prestamo;
+        public void EstaPrestado(PrestamoDTO value) => prestamo = value;
     }
 }

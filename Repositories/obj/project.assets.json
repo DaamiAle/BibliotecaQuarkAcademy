@@ -455,6 +455,19 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WindowsForms"
         ]
+      },
+      "Util/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Util.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Util.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       }
     }
   },
@@ -1090,6 +1103,11 @@
       "type": "project",
       "path": "../Models/Models.csproj",
       "msbuildProject": "../Models/Models.csproj"
+    },
+    "Util/1.0.0": {
+      "type": "project",
+      "path": "../Util/Util.csproj",
+      "msbuildProject": "../Util/Util.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1097,7 +1115,8 @@
       "Microsoft.EntityFrameworkCore >= 6.0.7",
       "Microsoft.EntityFrameworkCore.Relational >= 6.0.7",
       "Microsoft.EntityFrameworkCore.Sqlite >= 6.0.7",
-      "Models >= 1.0.0"
+      "Models >= 1.0.0",
+      "Util >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1134,6 +1153,9 @@
           "projectReferences": {
             "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Models\\Models.csproj": {
               "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Models\\Models.csproj"
+            },
+            "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Util\\Util.csproj": {
+              "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Util\\Util.csproj"
             }
           }
         }

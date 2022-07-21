@@ -7,7 +7,7 @@
         private int numIdentificacion;
         private bool esVIP;
         private int cuotaSocio;
-        private List<EjemplarDTO> ejemplaresRetirados;
+        private List<PrestamoDTO> prestamos;
 
         public string Nombre() => nombre;
         public void Nombre(string value) => nombre = value;
@@ -19,7 +19,7 @@
         public void EsVIP(bool value) => esVIP = value;
         public int CuotaSocio() => cuotaSocio;
         public void CuotaSocio(int value) => cuotaSocio = value;
-        public List<EjemplarDTO> EjemplaresRetirados() => ejemplaresRetirados;
-        public void EjemplaresRetirados(List<EjemplarDTO> value) => ejemplaresRetirados = value;
+        public List<PrestamoDTO> EjemplaresRetirados() => prestamos;
+        public void EjemplaresRetirados(List<PrestamoDTO> value) => prestamos = value;
     }
 }

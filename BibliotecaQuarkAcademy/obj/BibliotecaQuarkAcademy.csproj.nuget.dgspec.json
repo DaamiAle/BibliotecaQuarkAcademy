@@ -241,6 +241,9 @@
             "projectReferences": {
               "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Models\\Models.csproj": {
                 "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Models\\Models.csproj"
+              },
+              "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Util\\Util.csproj": {
+                "projectPath": "C:\\Users\\DaamiAle\\source\\repos\\BibliotecaQuarkAcademy\\Util\\Util.csproj"
               }
             }
           }

@@ -1,5 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Models.src;
+﻿using Models.src.DatabaseContext;
+using Models.src.Entities;
+using Util.src.CustomExceptions.LibroExceptions;
 
 namespace Repositories.src
 {
@@ -10,16 +11,29 @@ namespace Repositories.src
         {
             database = context;
         }
-        public LibroModel GetByISBN(string codigoISBN)
+        public LibroModel AgregarLibro(string nombre, string autor, string codigoISBN)
         {
-            return database.Libros.FirstOrDefault(l => l.CodigoISBN == codigoISBN);
+            LibroModel libro= new()
+            {
+                Nombre = nombre,
+                Autor = autor,
+                CodigoISBN = codigoISBN
+            };
+            libro = database.Libros.Add(libro).Entity;
+            database.SaveChanges();
+            return libro;
         }
 
-        public LibroModel AgregarLibro(LibroModel libro)
+
+        
+
+
+        public LibroModel GetByISBN(string codigoISBN)
         {
-            LibroModel libroModel = database.Libros.Add(libro).Entity;
-            database.SaveChanges();
-            return libroModel;
+            LibroModel libro = database.Libros.First(lib => lib.CodigoISBN == codigoISBN) ?? throw new LibroNotFoundException();
+            libro.EjemplaresDisponibles = database.Ejemplares.Where(ejemplar => ejemplar.Libro.CodigoISBN == codigoISBN).ToList();
+            
+            return libro;
         }
     }
 }

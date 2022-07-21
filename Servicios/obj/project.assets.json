@@ -476,7 +476,8 @@
           "Microsoft.EntityFrameworkCore": "6.0.7",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.7",
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.7",
-          "Models": "1.0.0"
+          "Models": "1.0.0",
+          "Util": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Repositories.dll": {}

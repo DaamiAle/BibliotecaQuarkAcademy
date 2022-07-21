@@ -1,5 +1,6 @@
 ﻿using DataObjects.src;
-using Models.src;
+using Models.src.DatabaseContext;
+using Models.src.Entities;
 using Repositories.src;
 using Util.src.CustomExceptions.EjemplarExceptions;
 using Util.src.CustomExceptions.LibroExceptions;
@@ -13,6 +14,9 @@ namespace Services.src
         {
             ejemplarRepository = new EjemplarRepository(context);
         }
+
+
+        /*
         public void AgregarEjemplar(int numEdicion, string ubicacion, string codigoISBN , LibroService libroService)
         {
             LibroModel libroModel = libroService.GetModelByISBN(codigoISBN);
@@ -45,7 +49,7 @@ namespace Services.src
                 ejemplaresDTO.Last().Ubicacion(it.Ubicacion);
             });
             return ejemplaresDTO;
-
         }
+        */
     }
 }

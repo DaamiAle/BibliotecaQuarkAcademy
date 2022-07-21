@@ -12,6 +12,6 @@ namespace Models.src.Entities
         public int NumIdentificacion { get; set; }
         public bool EsVIP { get; set; }
         public int CuotaSocio { get; set; }
-        public List<EjemplarModel> EjemplaresRetirados { get; set; }
+        public List<PrestamoModel> Prestamos { get; set; }
     }
 }

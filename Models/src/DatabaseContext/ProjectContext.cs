@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Models.src.Entities;
 using System.Reflection;
 
-namespace Models.src
+namespace Models.src.DatabaseContext
 {
     public class ProjectContext : DbContext
     {
@@ -36,9 +37,15 @@ namespace Models.src
                 entity.HasKey(ent => ent.Id);
             });
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<PrestamoModel>().ToTable("Prestamos");
+            modelBuilder.Entity<PrestamoModel>(entity =>
+            {
+                entity.HasKey(ent => ent.Id);
+            });
         }
         public DbSet<LibroModel> Libros { get; set; }
         public DbSet<EjemplarModel> Ejemplares { get; set; }
         public DbSet<SocioModel> Socios { get; set; }
+        public DbSet<PrestamoModel> Prestamos { get; set; }
     }
 }

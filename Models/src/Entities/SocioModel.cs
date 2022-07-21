@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Models.src
+namespace Models.src.Entities
 {
     [Index(nameof(NumIdentificacion), IsUnique = true)]
     public class SocioModel

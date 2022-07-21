@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Models.src
+namespace Models.src.Entities
 {
     [Index(nameof(CodigoISBN), IsUnique = true)]
     public class LibroModel

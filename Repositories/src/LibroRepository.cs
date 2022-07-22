@@ -16,7 +16,6 @@ namespace Repositories.src
             libro = database.Libros.Add(libro).Entity;
             database.SaveChanges();
         }
-
         public bool ExisteLibro(string codigoISBN)
         {
             return database.Libros.Any(it => it.CodigoISBN == codigoISBN);

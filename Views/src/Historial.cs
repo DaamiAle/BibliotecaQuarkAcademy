@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,20 @@ namespace Views.src
                 estadoPrestamo.Text += ("\n" + (prest.EstaFinalizado() ? "Devuelto" : "Pendiente").ToString());
             });
             
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            printDocument1 = new();
+            PrinterSettings printSet = new();
+            printDocument1.PrinterSettings = printSet;
+            printDocument1.PrintPage += GuardarPDF;
+            printDocument1.Print();
+        }
+
+        private void GuardarPDF(object sender, PrintPageEventArgs e)
+        {
             
         }
     }

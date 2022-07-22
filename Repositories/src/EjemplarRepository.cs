@@ -23,12 +23,10 @@ namespace Repositories.src
             database.SaveChanges();
             return ejemplar;
         }
-
         public bool ExisteEjemplar(string codigoISBN, int numEdicion)
         {
             return database.Ejemplares.Any(it => it.Libro.CodigoISBN == codigoISBN && it.NumEdicion == numEdicion);
         }
-
         public List<EjemplarModel> EjemplaresDisponibles(string codigoISBN)
         {
             List<EjemplarModel> ejemplares = database.Libros.Any(it => it.CodigoISBN == codigoISBN) ? database.Ejemplares.Where(it => it.Libro.CodigoISBN == codigoISBN && !it.EstaPrestado).ToList() : throw new LibroNotFoundException(codigoISBN);

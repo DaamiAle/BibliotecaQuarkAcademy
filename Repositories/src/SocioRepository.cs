@@ -16,14 +16,12 @@ namespace Repositories.src
         {
             return database.Socios.Any(it => it.NumIdentificacion == numIdentificacionSocio);
         }
-
         public SocioModel GetByIdentificacion(int numIdentificacion)
         {
             SocioModel socio = database.Socios.FirstOrDefault(it => it.NumIdentificacion == numIdentificacion) ?? throw new SocioNotFoundException(numIdentificacion);
             socio.Prestamos = database.Prestamos.Where(it => it.Socio.NumIdentificacion == numIdentificacion).ToList();
             return socio;
         }
-
         public void AddSocio(SocioModel socio)
         {
             database.Socios.Add(socio);

@@ -56,7 +56,6 @@ namespace Repositories.src
             }
             return prestamosModels;
         }
-
         public bool ExistePrestamoPendiente(int numEdicion, string codigoISBN, int numIdentificacionSocio)
         {
             return database.Prestamos.FirstOrDefault(prestamo => prestamo.Ejemplar.Libro.CodigoISBN == codigoISBN && prestamo.Ejemplar.NumEdicion == numEdicion && prestamo.Socio.NumIdentificacion == numIdentificacionSocio && !prestamo.EstaFinalizado) != null;

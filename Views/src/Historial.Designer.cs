@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.nombreLibro = new System.Windows.Forms.Label();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.codigoISBN = new System.Windows.Forms.Label();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.numEdicion = new System.Windows.Forms.Label();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.idSocio = new System.Windows.Forms.Label();
-            this.fechaPrestamo = new System.Windows.Forms.Label();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.fechaPrestamo = new System.Windows.Forms.Label();
             this.estadoPrestamo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -74,9 +74,20 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(775, 461);
-            this.splitContainer1.SplitterDistance = 242;
+            this.splitContainer1.Size = new System.Drawing.Size(1028, 461);
+            this.splitContainer1.SplitterDistance = 321;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // nombreLibro
+            // 
+            this.nombreLibro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nombreLibro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nombreLibro.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nombreLibro.Location = new System.Drawing.Point(0, 0);
+            this.nombreLibro.Name = "nombreLibro";
+            this.nombreLibro.Size = new System.Drawing.Size(321, 461);
+            this.nombreLibro.TabIndex = 0;
+            this.nombreLibro.Text = "Nombre Libro\r\n--------------------------------";
             // 
             // splitContainer2
             // 
@@ -91,9 +102,20 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(529, 461);
-            this.splitContainer2.SplitterDistance = 137;
+            this.splitContainer2.Size = new System.Drawing.Size(703, 461);
+            this.splitContainer2.SplitterDistance = 182;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // codigoISBN
+            // 
+            this.codigoISBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.codigoISBN.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.codigoISBN.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.codigoISBN.Location = new System.Drawing.Point(0, 0);
+            this.codigoISBN.Name = "codigoISBN";
+            this.codigoISBN.Size = new System.Drawing.Size(182, 461);
+            this.codigoISBN.TabIndex = 1;
+            this.codigoISBN.Text = "Codigo ISBN\r\n----------------";
             // 
             // splitContainer3
             // 
@@ -108,9 +130,20 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer4);
-            this.splitContainer3.Size = new System.Drawing.Size(388, 461);
-            this.splitContainer3.SplitterDistance = 80;
+            this.splitContainer3.Size = new System.Drawing.Size(517, 461);
+            this.splitContainer3.SplitterDistance = 106;
             this.splitContainer3.TabIndex = 0;
+            // 
+            // numEdicion
+            // 
+            this.numEdicion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numEdicion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numEdicion.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numEdicion.Location = new System.Drawing.Point(0, 0);
+            this.numEdicion.Name = "numEdicion";
+            this.numEdicion.Size = new System.Drawing.Size(106, 461);
+            this.numEdicion.TabIndex = 1;
+            this.numEdicion.Text = "Edicion\r\n--------";
             // 
             // splitContainer4
             // 
@@ -125,42 +158,9 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.splitContainer5);
-            this.splitContainer4.Size = new System.Drawing.Size(304, 461);
-            this.splitContainer4.SplitterDistance = 76;
+            this.splitContainer4.Size = new System.Drawing.Size(407, 461);
+            this.splitContainer4.SplitterDistance = 101;
             this.splitContainer4.TabIndex = 0;
-            // 
-            // nombreLibro
-            // 
-            this.nombreLibro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nombreLibro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nombreLibro.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nombreLibro.Location = new System.Drawing.Point(0, 0);
-            this.nombreLibro.Name = "nombreLibro";
-            this.nombreLibro.Size = new System.Drawing.Size(242, 461);
-            this.nombreLibro.TabIndex = 0;
-            this.nombreLibro.Text = "Nombre Libro\r\n--------------------------------";
-            // 
-            // codigoISBN
-            // 
-            this.codigoISBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.codigoISBN.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.codigoISBN.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.codigoISBN.Location = new System.Drawing.Point(0, 0);
-            this.codigoISBN.Name = "codigoISBN";
-            this.codigoISBN.Size = new System.Drawing.Size(137, 461);
-            this.codigoISBN.TabIndex = 1;
-            this.codigoISBN.Text = "Codigo ISBN\r\n----------------";
-            // 
-            // numEdicion
-            // 
-            this.numEdicion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numEdicion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numEdicion.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numEdicion.Location = new System.Drawing.Point(0, 0);
-            this.numEdicion.Name = "numEdicion";
-            this.numEdicion.Size = new System.Drawing.Size(80, 461);
-            this.numEdicion.TabIndex = 1;
-            this.numEdicion.Text = "Edicion\r\n--------";
             // 
             // idSocio
             // 
@@ -169,20 +169,9 @@
             this.idSocio.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.idSocio.Location = new System.Drawing.Point(0, 0);
             this.idSocio.Name = "idSocio";
-            this.idSocio.Size = new System.Drawing.Size(76, 461);
+            this.idSocio.Size = new System.Drawing.Size(101, 461);
             this.idSocio.TabIndex = 1;
-            this.idSocio.Text = "Id Socio\r\n--------\r\n";
-            // 
-            // fechaPrestamo
-            // 
-            this.fechaPrestamo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fechaPrestamo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fechaPrestamo.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.fechaPrestamo.Location = new System.Drawing.Point(0, 0);
-            this.fechaPrestamo.Name = "fechaPrestamo";
-            this.fechaPrestamo.Size = new System.Drawing.Size(103, 461);
-            this.fechaPrestamo.TabIndex = 1;
-            this.fechaPrestamo.Text = "Fecha\r\n----------";
+            this.idSocio.Text = "Id Socio\r\n--------";
             // 
             // splitContainer5
             // 
@@ -197,9 +186,20 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.estadoPrestamo);
-            this.splitContainer5.Size = new System.Drawing.Size(224, 461);
-            this.splitContainer5.SplitterDistance = 103;
+            this.splitContainer5.Size = new System.Drawing.Size(302, 461);
+            this.splitContainer5.SplitterDistance = 138;
             this.splitContainer5.TabIndex = 0;
+            // 
+            // fechaPrestamo
+            // 
+            this.fechaPrestamo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fechaPrestamo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fechaPrestamo.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.fechaPrestamo.Location = new System.Drawing.Point(0, 0);
+            this.fechaPrestamo.Name = "fechaPrestamo";
+            this.fechaPrestamo.Size = new System.Drawing.Size(138, 461);
+            this.fechaPrestamo.TabIndex = 1;
+            this.fechaPrestamo.Text = "Fecha\r\n----------";
             // 
             // estadoPrestamo
             // 
@@ -208,7 +208,7 @@
             this.estadoPrestamo.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.estadoPrestamo.Location = new System.Drawing.Point(0, 0);
             this.estadoPrestamo.Name = "estadoPrestamo";
-            this.estadoPrestamo.Size = new System.Drawing.Size(117, 461);
+            this.estadoPrestamo.Size = new System.Drawing.Size(160, 461);
             this.estadoPrestamo.TabIndex = 2;
             this.estadoPrestamo.Text = "Estado\r\n----------";
             // 
@@ -217,11 +217,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(775, 461);
+            this.ClientSize = new System.Drawing.Size(1028, 461);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Historial";
             this.Text = "Historial";
-            //this.Enter += new System.EventHandler(this.Historial_Enter);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

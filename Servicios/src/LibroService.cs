@@ -42,6 +42,18 @@ namespace Services.src
         {
             if (!ExiteLibro(codigoISBN))
             {
+                if (codigoISBN == null || codigoISBN.Length == 0)
+                {
+                    throw new LibroInvalidCreationException("codigoISBN");
+                }
+                if (nombre == null || nombre.Length == 0)
+                {
+                    throw new LibroInvalidCreationException("nombre");
+                }
+                if (autor == null || autor.Length == 0)
+                {
+                    throw new LibroInvalidCreationException("autor");
+                }
                 LibroModel libro = new()
                 {
                     Nombre = nombre,

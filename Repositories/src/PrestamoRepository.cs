@@ -44,15 +44,17 @@ namespace Repositories.src
         }
         public List<PrestamoModel> GetPrestamos()
         {
-            List<PrestamoModel> prestamos = database.Prestamos.ToList();
-            prestamos.ForEach(it => 
+            List<PrestamoModel> prestamosModels =   database.Prestamos.FromSqlRaw   ("SELECT Prestamos.*    FROM Socios,Prestamos,Ejemplares,Libros WHERE Prestamos.EjemplarId = Ejemplares.Id AND Prestamos.SocioId = Socios.Id AND Ejemplares.LibroId = Libros.Id ").ToList();
+            List<EjemplarModel> ejemplaresModels =  database.Ejemplares.FromSqlRaw  ("SELECT Ejemplares.*   FROM Socios,Prestamos,Ejemplares,Libros WHERE Prestamos.EjemplarId = Ejemplares.Id AND Prestamos.SocioId = Socios.Id AND Ejemplares.LibroId = Libros.Id ").ToList();
+            List<SocioModel> sociosModels =         database.Socios.FromSqlRaw      ("SELECT Socios.*       FROM Socios,Prestamos,Ejemplares,Libros WHERE Prestamos.EjemplarId = Ejemplares.Id AND Prestamos.SocioId = Socios.Id AND Ejemplares.LibroId = Libros.Id ").ToList();
+            List<LibroModel> libroModels =          database.Libros.FromSqlRaw      ("SELECT Libros.*       FROM Socios,Prestamos,Ejemplares,Libros WHERE Prestamos.EjemplarId = Ejemplares.Id AND Prestamos.SocioId = Socios.Id AND Ejemplares.LibroId = Libros.Id ").ToList();
+            for (int i = 0; i < prestamosModels.Count; i++)
             {
-                it.Ejemplar = database.Ejemplares.FirstOrDefault(ejem => ejem.Id == it.Ejemplar.Id);
-                it.Socio = database.Socios.FirstOrDefault(soc => soc.NumIdentificacion == it.Socio.NumIdentificacion);
-            });
-
-            return prestamos;
-            
+                prestamosModels[i].Ejemplar = ejemplaresModels[i];
+                prestamosModels[i].Socio = sociosModels[i];
+                prestamosModels[i].Ejemplar.Libro = libroModels[i];
+            }
+            return prestamosModels;
         }
 
         public bool ExistePrestamoPendiente(int numEdicion, string codigoISBN, int numIdentificacionSocio)

@@ -1,6 +1,7 @@
 ﻿using Services.src;
 using DataObjects.src;
 using Models.src.DatabaseContext;
+using Util.src.CustomExceptions.PrestamoExceptions;
 
 namespace Views.src
 {
@@ -68,6 +69,53 @@ namespace Views.src
             }
         }
 
+        internal void DevolverUnEjemplarCualquieraDeUnSocioCualquiera()
+        {
+            try
+            {
+                PrestamoDTO prestamo = HistorialPrestamos().FirstOrDefault(it => !it.EstaFinalizado());
+                if (prestamo != null)
+                {
+                    DevolverEjemplar(prestamo.Ejemplar(), prestamo.Socio().NumIdentificacion());
+                }
+                else
+                {
+                    MessageBox.Show("No hay prestamos pendientes");
+                }
+            }
+            catch (Exception except)
+            {
+                MessageBox.Show($"Error: {except.Message}");
+            }
+        }
+
+        internal void AgregarLibroConValoresInvalidos()
+        {
+            try
+            {
+                libroService.AgregarLibro(null, "", "");
+            }
+            catch (Exception except)
+            {
+                MessageBox.Show($"Error: {except.Message}");
+            }
+            try
+            {
+                libroService.AgregarLibro("codigo ISBN", "nombre", "");
+            }
+            catch (Exception except)
+            {
+                MessageBox.Show($"Error: {except.Message}");
+            }            
+            try
+            {
+                libroService.AgregarLibro("codigoISBN", "", "");                
+            }
+            catch (Exception except)
+            {
+                MessageBox.Show($"Error: {except.Message}");
+            }
+        }
         internal void PrestamosSocioComun()
         {
             try
@@ -120,7 +168,7 @@ namespace Views.src
                 return null;
             }
         }
-
+        
 
         /// <summary>
         /// Agrega un nuevo ejemlar de un libro a la biblioteca.
@@ -172,7 +220,7 @@ namespace Views.src
                 }
                 else
                 {
-                    return null;
+                    throw new PrestamoLimitReachedException();
                 }
             }
             catch (Exception except)

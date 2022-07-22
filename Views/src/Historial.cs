@@ -18,32 +18,18 @@ namespace Views.src
         {
             this.presentador = presentador;
             List<PrestamoDTO> prestamos = presentador.HistorialPrestamos();
+            InitializeComponent();
             prestamos.ForEach(prest =>
             {
-                nombreLibro.Text += ("\n" + prest.Ejemplar().Libro().Nombre());
-                codigoISBN.Text += ("\n" + prest.Ejemplar().Libro().CodigoISBN());
+                nombreLibro.Text += ("\n" + prest.Ejemplar().Libro().Nombre().ToString());
+                codigoISBN.Text += ("\n" + prest.Ejemplar().Libro().CodigoISBN().ToString());
                 numEdicion.Text += ("\n" + prest.Ejemplar().NumEdicion().ToString());
-                idSocio.Text += ("\n" + prest.Socio().NumIdentificacion());
+                idSocio.Text += ("\n" + prest.Socio().NumIdentificacion().ToString());
                 fechaPrestamo.Text += ("\n" + prest.FechaPrestamo().ToString());
-                estadoPrestamo.Text += ("\n" + (prest.EstaFinalizado() ? "Devuelto" : "Pendiente"));
+                estadoPrestamo.Text += ("\n" + (prest.EstaFinalizado() ? "Devuelto" : "Pendiente").ToString());
             });
-            InitializeComponent();
+            
             
         }
-        /*
-        private void Historial_Enter(object sender, EventArgs e)
-        {
-            List<PrestamoDTO> prestamos = presentador.HistorialPrestamos();
-            prestamos.ForEach(prest =>
-            {
-                nombreLibro.Text += "\n" + prest.Ejemplar().Libro().Nombre();
-                codigoISBN.Text += "\n" + prest.Ejemplar().Libro().CodigoISBN();
-                numEdicion.Text += "\n" + prest.Ejemplar().NumEdicion();
-                idSocio.Text += "\n" + prest.Socio().NumIdentificacion();
-                fechaPrestamo.Text += "\n" + prest.FechaPrestamo().ToString();
-                estadoPrestamo.Text += "\n" + (prest.EstaFinalizado() ? "Devuelto" : "Pendiente");
-            });
-        }
-        */
     }
 }

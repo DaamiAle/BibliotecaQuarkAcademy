@@ -14,41 +14,31 @@ namespace Services.src
         {
             socioRepository = new(context);
         }
-        /*
-        
-        public SocioModel GetSocioModelByIdentificacion(int numIdentificacion) {
-            SocioModel socioModel = socioRepository.GetByIdentificacion(numIdentificacion);
-            if (socioModel.GetType() == typeof(SocioModel))
-            {
-                return socioModel;
-            }
-            else
-            {
-                throw new SocioNotFoundException();
-            }
-        }
-        public SocioDTO GetByNumIdentificacion(int numIdentificacionSocio)
+
+        public bool ExisteSocio(int numIdentificacionSocio)
         {
-            SocioModel socioModel = GetSocioModelByIdentificacion(numIdentificacionSocio);
-            SocioDTO socioDTO = new();
-            socioDTO.Nombre(socioModel.Nombre);
-            socioDTO.Apellido(socioModel.Apellido);
-            socioDTO.NumIdentificacion(socioModel.NumIdentificacion);
-            socioDTO.EsVIP(socioModel.EsVIP);
-            socioDTO.CuotaSocio(socioModel.CuotaSocio);
-            socioDTO.EjemplaresRetirados(new());
-            socioModel.EjemplaresRetirados.ForEach(ejemplarM =>
-            { 
-                socioDTO.EjemplaresRetirados().Add(new ());
-                socioDTO.EjemplaresRetirados().Last().NumEdicion(ejemplarM.NumEdicion);
-                socioDTO.EjemplaresRetirados().Last().Ubicacion(ejemplarM.Ubicacion);
-                socioDTO.EjemplaresRetirados().Last().Libro(new());
-                socioDTO.EjemplaresRetirados().Last().Libro().CodigoISBN(ejemplarM.Libro.CodigoISBN);
-                socioDTO.EjemplaresRetirados().Last().Libro().Nombre(ejemplarM.Libro.Nombre);
-                socioDTO.EjemplaresRetirados().Last().Libro().Autor(ejemplarM.Libro.Autor);
-            });
-            return socioDTO;
+            return socioRepository.ExisteSocio(numIdentificacionSocio);
         }
-        */
+
+        public bool TieneLimiteDePrestamos(int numIdentificacionSocio)
+        {
+            SocioModel socio = socioRepository.GetByIdentificacion(numIdentificacionSocio);
+            return socio.EsVIP ? socio.Prestamos.Count < 3 : socio.Prestamos.Count < 1;
+        }
+        public void RegistrarSocio(string nombre, string apellido, int numIdentificacion, bool esVIP, int cuotaSocio)
+        {
+            if (!ExisteSocio(numIdentificacion))
+            {
+                SocioModel socio = new()
+                {
+                    Nombre = nombre,
+                    Apellido = apellido,
+                    NumIdentificacion = numIdentificacion,
+                    EsVIP = esVIP,
+                    CuotaSocio = cuotaSocio
+                };
+                socioRepository.AddSocio(socio);
+            }
+        }
     }
 }

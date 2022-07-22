@@ -6,7 +6,8 @@
         private LibroDTO libro;
         private int numEdicion;
         private string ubicacion;
-        private PrestamoDTO prestamo;
+        private bool estaPrestado;
+        private List<PrestamoDTO> prestamos;
 
 
         // Propiedades
@@ -16,7 +17,9 @@
         public void NumEdicion(int value) => numEdicion = value;
         public string Ubicacion() => ubicacion;
         public void Ubicacion(string value) => ubicacion = value;
-        public PrestamoDTO EstaPrestado() => prestamo;
-        public void EstaPrestado(PrestamoDTO value) => prestamo = value;
+        public bool EstaPrestado() => estaPrestado;
+        public void EstaPrestado(bool value) => estaPrestado = value;
+        public List<PrestamoDTO> Prestamos() => prestamos;
+        public void Prestamos(List<PrestamoDTO> value) => prestamos = value;
     }
 }

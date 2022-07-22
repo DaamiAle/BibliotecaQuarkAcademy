@@ -15,41 +15,41 @@ namespace Services.src
             ejemplarRepository = new EjemplarRepository(context);
         }
 
-
-        /*
-        public void AgregarEjemplar(int numEdicion, string ubicacion, string codigoISBN , LibroService libroService)
+        public void AgregarEjemplar(int numEdicion, string ubicacion, string codigoISBN)
         {
-            LibroModel libroModel = libroService.GetModelByISBN(codigoISBN);
-            if (libroModel == null)
+            if (!ejemplarRepository.ExisteEjemplar(codigoISBN, numEdicion))
             {
-                throw new LibroNotFoundException();
-            }
-            else
-            {
-                EjemplarModel ejemplarModel = new();
-                ejemplarModel.NumEdicion = numEdicion;
-                ejemplarModel.Ubicacion = ubicacion;
-                ejemplarModel.Libro = libroModel;
-                ejemplarModel = ejemplarRepository.AgregarEjemplar(ejemplarModel);
-                if (ejemplarModel == null)
-                {
-                    throw new EjemplarNotCreatedExceptions();
-                }
+                ejemplarRepository.AgregarEjemplar(numEdicion, ubicacion, codigoISBN);
             }
         }
 
-        public List<EjemplarDTO> ObtenerEjmplares(string codigoISBN,LibroService libroService)
+        public bool TieneEjemplaresDisponibles(string codigoISBN)
         {
-            LibroModel libro = libroService.GetModelByISBN(codigoISBN);
-            List<EjemplarModel> ejemplares = ejemplarRepository.ObtenerEjemplaresPorIdLibro(libro.Id);
-            List<EjemplarDTO> ejemplaresDTO = new();
-            ejemplares.ForEach(it => {
-                ejemplaresDTO.Add(new EjemplarDTO());
-                ejemplaresDTO.Last().NumEdicion(it.NumEdicion);
-                ejemplaresDTO.Last().Ubicacion(it.Ubicacion);
+            return ejemplarRepository.EjemplaresDisponibles(codigoISBN).Count > 0;
+        }
+
+        public bool ExisteEjemplar(string codigoISBN, int numEdicion)
+        {
+            return ejemplarRepository.ExisteEjemplar(codigoISBN, numEdicion);
+        }
+
+        public List<EjemplarDTO> EjemplaresDisponiblesDe(string codigoISBN)
+        {
+            List<EjemplarModel> ejemplaresModel = ejemplarRepository.EjemplaresDisponibles(codigoISBN);
+            List<EjemplarDTO> ejemplaresDTO = new List<EjemplarDTO>();
+            ejemplaresModel.ForEach(eModel =>
+            {
+                ejemplaresDTO.Add(new());
+                ejemplaresDTO.Last().NumEdicion(eModel.NumEdicion);
+                ejemplaresDTO.Last().Ubicacion(eModel.Ubicacion);
+                ejemplaresDTO.Last().EstaPrestado(eModel.EstaPrestado);
+                ejemplaresDTO.Last().Libro(new());
+                ejemplaresDTO.Last().Libro().CodigoISBN(eModel.Libro.CodigoISBN);
+                ejemplaresDTO.Last().Libro().Nombre(eModel.Libro.Nombre);
+                ejemplaresDTO.Last().Libro().Autor(eModel.Libro.Autor);
             });
             return ejemplaresDTO;
         }
-        */
+
     }
 }

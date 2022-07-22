@@ -9,20 +9,20 @@ namespace Views.src
         {
             presentador = new();
             presentador.CrearDB();
+            presentador.PoblarDB();
             InitializeComponent();
         }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
-            string objetivo = "verificar posibilidad de prestamos";
-            try 
-            {
-                MessageBox.Show("Exito al " + objetivo);
-            }
-            catch (Exception exception) 
-            {
-                MessageBox.Show($"Error: {exception.Message}");
-            }
+            presentador.PrestamosSocioComun();
+            presentador.PrestamosSocioVIP();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            new Historial(presentador).Show();
         }
     }
 }

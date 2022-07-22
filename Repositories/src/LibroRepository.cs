@@ -11,29 +11,15 @@ namespace Repositories.src
         {
             database = context;
         }
-        public LibroModel AgregarLibro(string nombre, string autor, string codigoISBN)
+        public void AddLibro(LibroModel libro)
         {
-            LibroModel libro= new()
-            {
-                Nombre = nombre,
-                Autor = autor,
-                CodigoISBN = codigoISBN
-            };
             libro = database.Libros.Add(libro).Entity;
             database.SaveChanges();
-            return libro;
         }
 
-
-        
-
-
-        public LibroModel GetByISBN(string codigoISBN)
+        public bool ExisteLibro(string codigoISBN)
         {
-            LibroModel libro = database.Libros.First(lib => lib.CodigoISBN == codigoISBN) ?? throw new LibroNotFoundException();
-            libro.EjemplaresDisponibles = database.Ejemplares.Where(ejemplar => ejemplar.Libro.CodigoISBN == codigoISBN).ToList();
-            
-            return libro;
+            return database.Libros.Any(it => it.CodigoISBN == codigoISBN);
         }
     }
 }

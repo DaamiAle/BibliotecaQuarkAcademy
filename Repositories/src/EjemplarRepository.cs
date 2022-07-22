@@ -17,15 +17,29 @@ namespace Repositories.src
             {
                 NumEdicion = numEdicion,
                 Ubicacion = ubicacion,
-                Libro = database.Libros.First(it => it.CodigoISBN == codigoISBN) ?? throw new LibroNotFoundException()
+                Libro = database.Libros.FirstOrDefault(it => it.CodigoISBN == codigoISBN) ?? throw new LibroNotFoundException(codigoISBN)
             };
-            return database.Ejemplares.Add(ejemplar).Entity;;
+            ejemplar = database.Ejemplares.Add(ejemplar).Entity;
+            database.SaveChanges();
+            return ejemplar;
+        }
+
+        public bool ExisteEjemplar(string codigoISBN, int numEdicion)
+        {
+            return database.Ejemplares.Any(it => it.Libro.CodigoISBN == codigoISBN && it.NumEdicion == numEdicion);
+        }
+
+        public List<EjemplarModel> EjemplaresDisponibles(string codigoISBN)
+        {
+            List<EjemplarModel> ejemplares = database.Libros.Any(it => it.CodigoISBN == codigoISBN) ? database.Ejemplares.Where(it => it.Libro.CodigoISBN == codigoISBN && !it.EstaPrestado).ToList() : throw new LibroNotFoundException(codigoISBN);
+            ejemplares.ForEach(ejem => ejem.Libro = database.Libros.FirstOrDefault(lib => lib.CodigoISBN == codigoISBN));
+            return ejemplares;
         }
 
 
 
 
-        
+
         /*
         public List<EjemplarModel> ObtenerEjemplaresPorIdLibro(int libroId)
         {

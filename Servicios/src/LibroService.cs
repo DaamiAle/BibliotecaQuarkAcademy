@@ -36,16 +36,26 @@ namespace Services.src
             libroDTO.Nombre(libroModel.Nombre);
             libroDTO.Autor(libroModel.Autor);
             return libroDTO;
+        }*/
+
+        public void AgregarLibro(string codigoISBN, string nombre, string autor)
+        {
+            if (!ExiteLibro(codigoISBN))
+            {
+                LibroModel libro = new()
+                {
+                    Nombre = nombre,
+                    Autor = autor,
+                    CodigoISBN = codigoISBN
+                };
+                libroReposytory.AddLibro(libro);
+            }
+            
+        }
+        public bool ExiteLibro(string codigoISBN)
+        {
+            return libroReposytory.ExisteLibro(codigoISBN);
         }
 
-        public LibroModel AgregarLibro(LibroDTO libroDTO)
-        {
-            LibroModel libroModel = new();
-            libroModel.CodigoISBN=libroDTO.CodigoISBN();
-            libroModel.Nombre= libroDTO.Nombre();
-            libroModel.Autor=libroDTO.Autor();
-            return libroReposytory.AgregarLibro(libroModel);
-        }
-        */
     }
 }

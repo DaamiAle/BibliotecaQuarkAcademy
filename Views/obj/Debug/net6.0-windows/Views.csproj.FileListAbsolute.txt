@@ -23,3 +23,4 @@ C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Views\bin\Debug\net6.0-win
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Views\bin\Debug\net6.0-windows\Repositories.pdb
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Views\bin\Debug\net6.0-windows\Util.pdb
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Views\obj\Debug\net6.0-windows\Views.csproj.CopyComplete
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Views\obj\Debug\net6.0-windows\Views.src.Historial.resources

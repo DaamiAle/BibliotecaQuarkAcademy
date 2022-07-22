@@ -1,5 +1,6 @@
 ﻿using Models.src.DatabaseContext;
 using Models.src.Entities;
+using Util.src.CustomExceptions.SocioExceptions;
 
 namespace Repositories.src
 {
@@ -10,37 +11,23 @@ namespace Repositories.src
         {
             database = context;
         }
-        public SocioModel AgregarSocio(string nombre, string apellido, int numIdentificacion, bool esVIP, int cuotaSocio)
+
+        public bool ExisteSocio(int numIdentificacionSocio)
         {
-            SocioModel socio = new()
-            {
-                Nombre = nombre,
-                Apellido = apellido,
-                NumIdentificacion = numIdentificacion,
-                EsVIP = esVIP,
-                CuotaSocio = cuotaSocio
-            };
-            socio = database.Socios.Add(socio).Entity;
-            database.SaveChanges();
-            return socio;
+            return database.Socios.Any(it => it.NumIdentificacion == numIdentificacionSocio);
         }
 
-
-
-
-        
         public SocioModel GetByIdentificacion(int numIdentificacion)
         {
-            SocioModel socio = database.Socios.FirstOrDefault(it => it.NumIdentificacion == numIdentificacion);
-            /*
-            socio.EjemplaresRetirados = database.Ejemplares.Where(it => it.SocioPoseedor.NumIdentificacion == numIdentificacion).ToList();
-            socio.EjemplaresRetirados.ForEach(ejemplar =>
-            {
-                ejemplar.Libro = database.Libros.First(libro => libro.Id == ejemplar.Libro.Id);
-            });
-            */
+            SocioModel socio = database.Socios.FirstOrDefault(it => it.NumIdentificacion == numIdentificacion) ?? throw new SocioNotFoundException(numIdentificacion);
+            socio.Prestamos = database.Prestamos.Where(it => it.Socio.NumIdentificacion == numIdentificacion).ToList();
             return socio;
         }
-        
+
+        public void AddSocio(SocioModel socio)
+        {
+            database.Socios.Add(socio);
+            database.SaveChanges();
+        }
     }
 }

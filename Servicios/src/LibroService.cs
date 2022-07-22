@@ -14,29 +14,6 @@ namespace Services.src
         {
             libroReposytory = new LibroRepository(context);
         }
-        /*
-        internal LibroModel GetModelByISBN(string codigoISBN)
-        {
-            LibroModel libroModel = libroReposytory.GetByISBN(codigoISBN);
-            if (libroModel.GetType() != typeof(LibroModel))
-            {
-                throw new LibroNotFoundException();
-            }
-            else
-            {
-                return libroModel;
-            }
-        }
-
-        public LibroDTO GetByISBN(string codigoISBN)
-        {
-            LibroModel libroModel = GetModelByISBN(codigoISBN);
-            LibroDTO libroDTO = new();
-            libroDTO.CodigoISBN(libroModel.CodigoISBN);
-            libroDTO.Nombre(libroModel.Nombre);
-            libroDTO.Autor(libroModel.Autor);
-            return libroDTO;
-        }*/
 
         public void AgregarLibro(string codigoISBN, string nombre, string autor)
         {

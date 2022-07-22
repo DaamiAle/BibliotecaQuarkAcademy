@@ -13,10 +13,8 @@ namespace Views.src
 {
     public partial class Historial : Form
     {
-        private readonly Presentador presentador;
         public Historial(Presentador presentador)
         {
-            this.presentador = presentador;
             List<PrestamoDTO> prestamos = presentador.HistorialPrestamos();
             InitializeComponent();
             prestamos.ForEach(prest =>

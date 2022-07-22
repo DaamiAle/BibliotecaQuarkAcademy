@@ -18,8 +18,6 @@ namespace DataObjects.src
         public SocioDTO Socio() => socio;
         public void Socio(SocioDTO value) => socio = value;
 
-
-
         public PrestamoDTO(DateTime fechaPrestamo, bool estaFinalizado, EjemplarDTO ejemplar, SocioDTO socio)
         {
             this.fechaPrestamo = fechaPrestamo;

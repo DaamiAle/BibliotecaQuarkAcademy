@@ -37,14 +37,5 @@ namespace Repositories.src
         }
 
 
-
-
-
-        /*
-        public List<EjemplarModel> ObtenerEjemplaresPorIdLibro(int libroId)
-        {
-            return database.Ejemplares.Where(it => it.Libro == database.Libros.FirstOrDefault(lib => lib.Id == libroId)).ToList();
-        }
-        */
     }
 }

@@ -14,14 +14,13 @@ namespace Repositories.src
         {
             database = context;
         }
-        public PrestamoModel CreatePrestamo(string codigoISBN, int numIdentificacionSocio)
+        public PrestamoModel CreatePrestamo(EjemplarModel ejemplarModel, int numIdentificacionSocio)
         {
-            LibroModel libro = database.Libros.FirstOrDefault(lib => lib.CodigoISBN == codigoISBN) ?? throw new LibroNotFoundException(codigoISBN);
             PrestamoModel prestamo = new()
             {
-                Ejemplar = database.Ejemplares.FirstOrDefault(ejem => ejem.Libro.CodigoISBN == codigoISBN && !ejem.EstaPrestado ) ?? throw new NoEjemplaresAvailablesException(),
-                Socio = database.Socios.FirstOrDefault(soc => soc.NumIdentificacion == numIdentificacionSocio) ?? throw new SocioNotFoundException(numIdentificacionSocio),
-                FechaPrestamo = DateTime.Now,
+                Ejemplar = database.Ejemplares.FirstOrDefault(ejem => ejem.Ubicacion == ejemplarModel.Ubicacion && ejem.NumEdicion == ejemplarModel.NumEdicion),
+                Socio = database.Socios.FirstOrDefault(soc => soc.NumIdentificacion == numIdentificacionSocio),
+                FechaPrestamo = new DateOnly(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day),
                 EstaFinalizado = false
             };
             prestamo = database.Prestamos.Add(prestamo).Entity;

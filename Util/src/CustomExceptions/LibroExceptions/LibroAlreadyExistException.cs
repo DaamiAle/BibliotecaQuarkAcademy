@@ -8,6 +8,6 @@ namespace Util.src.CustomExceptions.LibroExceptions
 {
     public class LibroAlreadyExistException : Exception
     {
-        public LibroAlreadyExistException() : base("El libro ya existe") { }
+        public LibroAlreadyExistException(string value) : base($"El libro '{value}' ya existe") { }
     }
 }

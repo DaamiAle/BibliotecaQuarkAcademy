@@ -20,5 +20,10 @@ namespace Repositories.src
         {
             return database.Libros.Any(it => it.CodigoISBN == codigoISBN);
         }
+
+        public LibroModel ObtenerLibro(string nombreLibro)
+        {
+            return database.Libros.FirstOrDefault(it => it.Nombre == nombreLibro);
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace Views.src
         {
             presentador = new();
             presentador.CrearDB();
-            presentador.PoblarDB();
+            //presentador.PoblarDB();
             InitializeComponent();
         }
         
@@ -47,7 +47,7 @@ namespace Views.src
             MessageBox.Show(resultado);
             
         }
-
+        /*
         private void button5_Click(object sender, EventArgs e)
         {
             presentador.PrestarEjemplar("drama001",3);
@@ -57,7 +57,7 @@ namespace Views.src
         {
             presentador.PrestarEjemplar("drama001", 1);
         }
-
+        */
         private void button7_Click(object sender, EventArgs e)
         {
             presentador.AgregarLibroConValoresInvalidos();

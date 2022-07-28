@@ -17,15 +17,19 @@ namespace Services.src
 
         public void AgregarEjemplar(int numEdicion, string ubicacion, string codigoISBN)
         {
-            if (!ejemplarRepository.ExisteEjemplar(codigoISBN, numEdicion))
+            if (!ExisteEjemplar(codigoISBN,numEdicion))
             {
                 ejemplarRepository.AgregarEjemplar(numEdicion, ubicacion, codigoISBN);
+            }
+            else
+            {
+                throw new EjemplarAlreadyExistException(numEdicion.ToString());
             }
         }
 
         public bool TieneEjemplaresDisponibles(string codigoISBN)
         {
-            return ejemplarRepository.EjemplaresDisponibles(codigoISBN).Count > 0;
+            return ejemplarRepository.EjemplaresExistentes(codigoISBN).Where(it => !it.EstaPrestado).ToList().Count > 0;
         }
 
         public bool ExisteEjemplar(string codigoISBN, int numEdicion)
@@ -33,9 +37,9 @@ namespace Services.src
             return ejemplarRepository.ExisteEjemplar(codigoISBN, numEdicion);
         }
 
-        public List<EjemplarDTO> EjemplaresDisponiblesDe(string codigoISBN)
+        public List<EjemplarDTO> EjemplaresExistentesDe(string codigoISBN)
         {
-            List<EjemplarModel> ejemplaresModel = ejemplarRepository.EjemplaresDisponibles(codigoISBN);
+            List<EjemplarModel> ejemplaresModel = ejemplarRepository.EjemplaresExistentes(codigoISBN);
             List<EjemplarDTO> ejemplaresDTO = new List<EjemplarDTO>();
             ejemplaresModel.ForEach(eModel =>
             {

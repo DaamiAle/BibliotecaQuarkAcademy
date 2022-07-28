@@ -19,18 +19,6 @@ namespace Services.src
         {
             if (!ExiteLibro(codigoISBN))
             {
-                if (codigoISBN == null || codigoISBN.Length == 0)
-                {
-                    throw new LibroInvalidCreationException("codigoISBN");
-                }
-                if (nombre == null || nombre.Length == 0)
-                {
-                    throw new LibroInvalidCreationException("nombre");
-                }
-                if (autor == null || autor.Length == 0)
-                {
-                    throw new LibroInvalidCreationException("autor");
-                }
                 LibroModel libro = new()
                 {
                     Nombre = nombre,
@@ -39,12 +27,31 @@ namespace Services.src
                 };
                 libroReposytory.AddLibro(libro);
             }
-            
+            else
+            {
+                throw new LibroAlreadyExistException(nombre);
+            }
         }
         public bool ExiteLibro(string codigoISBN)
         {
             return libroReposytory.ExisteLibro(codigoISBN);
         }
 
+        public LibroDTO BuscarLibro(string nombreLibro)
+        {
+            LibroModel libro = libroReposytory.ObtenerLibro(nombreLibro);
+            if (libro == null)
+            {
+                throw new LibroNotFoundException(nombreLibro);
+            }
+            else
+            {
+                LibroDTO libroDTO = new();
+                libroDTO.Nombre(libro.Nombre);
+                libroDTO.Autor(libro.Autor);
+                libroDTO.CodigoISBN(libro.CodigoISBN);
+                return libroDTO;
+            }
+        }
     }
 }

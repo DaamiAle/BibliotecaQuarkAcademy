@@ -23,22 +23,40 @@ namespace Services.src
         public bool TieneLimiteDePrestamos(int numIdentificacionSocio)
         {
             SocioModel socio = socioRepository.GetByIdentificacion(numIdentificacionSocio);
+            socio.Prestamos = socio.Prestamos.Where(it => it.EstaFinalizado == false).ToList();
             return socio.EsVIP ? socio.Prestamos.Count < 3 : socio.Prestamos.Count < 1;
         }
-        public void RegistrarSocio(string nombre, string apellido, int numIdentificacion, bool esVIP, int cuotaSocio)
+        public void RegistrarSocio(string nombre, string apellido, int numIdentificacion, bool esVIP, int cuota)
         {
-            if (!ExisteSocio(numIdentificacion))
+            if (!socioRepository.ExisteSocio(numIdentificacion))
             {
-                SocioModel socio = new()
-                {
-                    Nombre = nombre,
-                    Apellido = apellido,
-                    NumIdentificacion = numIdentificacion,
-                    EsVIP = esVIP,
-                    CuotaSocio = cuotaSocio
-                };
-                socioRepository.AddSocio(socio);
+                socioRepository.AddSocio(nombre, apellido, numIdentificacion, esVIP, cuota);
             }
+            else
+            {
+                throw new SocioAlreadyExistsException($"{nombre} {apellido}");
+            }
+        }
+
+        public SocioDTO ObtenerSocio(int identSocio)
+        {
+            
+            if (!socioRepository.ExisteSocio(identSocio))
+            {
+                throw new SocioNotFoundException(identSocio);
+            }
+            else
+            {
+                SocioModel socio = socioRepository.GetByIdentificacion(identSocio);
+                SocioDTO socioDTO = new();
+                socioDTO.Nombre(socio.Nombre);
+                socioDTO.Apellido(socio.Apellido);
+                socioDTO.NumIdentificacion(socio.NumIdentificacion);
+                socioDTO.EsVIP(socio.EsVIP);
+                socioDTO.CuotaSocio(socio.CuotaSocio);
+                return socioDTO;
+            }
+            
         }
     }
 }

@@ -1,8 +1,3 @@
-C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\obj\Debug\net6.0-windows\Services.csproj.AssemblyReference.cache
-C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\obj\Debug\net6.0-windows\Services.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\obj\Debug\net6.0-windows\Services.AssemblyInfoInputs.cache
-C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\obj\Debug\net6.0-windows\Services.AssemblyInfo.cs
-C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\obj\Debug\net6.0-windows\Services.csproj.CoreCompileInputs.cache
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\bin\Debug\net6.0-windows\Services.deps.json
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\bin\Debug\net6.0-windows\Services.dll
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\bin\Debug\net6.0-windows\Services.pdb
@@ -14,6 +9,11 @@ C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\bin\Debug\net6.0
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\bin\Debug\net6.0-windows\Repositories.pdb
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\bin\Debug\net6.0-windows\Util.pdb
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\bin\Debug\net6.0-windows\Models.pdb
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\obj\Debug\net6.0-windows\Services.csproj.AssemblyReference.cache
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\obj\Debug\net6.0-windows\Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\obj\Debug\net6.0-windows\Services.AssemblyInfoInputs.cache
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\obj\Debug\net6.0-windows\Services.AssemblyInfo.cs
+C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\obj\Debug\net6.0-windows\Services.csproj.CoreCompileInputs.cache
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\obj\Debug\net6.0-windows\Services.csproj.CopyComplete
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\obj\Debug\net6.0-windows\Services.dll
 C:\Users\DaamiAle\source\repos\BibliotecaQuarkAcademy\Servicios\obj\Debug\net6.0-windows\refint\Services.dll

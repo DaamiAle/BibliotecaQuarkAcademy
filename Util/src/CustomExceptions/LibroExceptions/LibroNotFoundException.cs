@@ -2,6 +2,6 @@
 {
     public class LibroNotFoundException : Exception
     {
-        public LibroNotFoundException(string codigoISBN) : base($"Libro {codigoISBN} no encontrado") { }
+        public LibroNotFoundException(string value) : base($"Libro '{value}' no encontrado") { }
     }
 }

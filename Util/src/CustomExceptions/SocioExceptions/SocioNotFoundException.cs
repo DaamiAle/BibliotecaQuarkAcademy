@@ -8,6 +8,6 @@ namespace Util.src.CustomExceptions.SocioExceptions
 {
     public class SocioNotFoundException : Exception
     {
-        public SocioNotFoundException(int numIdentificacion) : base($"No se encontro un socio registrado bajo la identificacion {numIdentificacion}.") { }
+        public SocioNotFoundException(int numIdentificacion) : base($"No se encontro un socio registrado bajo la identificacion '{numIdentificacion}'.") { }
     }
 }

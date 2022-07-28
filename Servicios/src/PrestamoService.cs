@@ -13,9 +13,20 @@ namespace Services.src
         {
             prestamoRepository = new(context);
         }
-        public EjemplarDTO PrestarEjemplar(string codigoISBN, int numIdentificacionSocio)
+        public EjemplarDTO PrestarEjemplar(EjemplarDTO ejemplar, int numIdentificacionSocio)
         {
-            PrestamoModel prestamoModel = prestamoRepository.CreatePrestamo(codigoISBN, numIdentificacionSocio);
+            EjemplarModel ejemplarModel = new()
+            {
+                NumEdicion = ejemplar.NumEdicion(),
+                Ubicacion = ejemplar.Ubicacion(),
+                Libro = new()
+                {
+                    CodigoISBN = ejemplar.Libro().CodigoISBN(),
+                    Nombre = ejemplar.Libro().Nombre(),
+                    Autor = ejemplar.Libro().Autor()
+                }
+            };
+            PrestamoModel prestamoModel = prestamoRepository.CreatePrestamo(ejemplarModel, numIdentificacionSocio);
             
             EjemplarDTO ejemplarDTO = new();
             ejemplarDTO.EstaPrestado(true);
@@ -44,7 +55,7 @@ namespace Services.src
             {
                 prestamosDTO.Add(new PrestamoDTO(it.FechaPrestamo, it.EstaFinalizado, new(), new()));
                 
-                prestamosDTO.Last().Ejemplar().NumEdicion(it.Ejemplar.NumEdicion);//
+                prestamosDTO.Last().Ejemplar().NumEdicion(it.Ejemplar.NumEdicion);
                 prestamosDTO.Last().Ejemplar().Ubicacion(it.Ejemplar.Ubicacion);
                 prestamosDTO.Last().Ejemplar().Libro(new());
                 prestamosDTO.Last().Ejemplar().Libro().CodigoISBN(it.Ejemplar.Libro.CodigoISBN);

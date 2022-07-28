@@ -2,6 +2,9 @@
 using DataObjects.src;
 using Models.src.DatabaseContext;
 using Util.src.CustomExceptions.PrestamoExceptions;
+using Util.src.CustomExceptions.LibroExceptions;
+using Util.src.CustomExceptions.SocioExceptions;
+using Util.src.CustomExceptions.EjemplarExceptions;
 
 namespace Views.src
 {
@@ -29,14 +32,17 @@ namespace Views.src
             database.Database.EnsureCreated();
             database.SaveChanges();
         }
+
+
+        /*
         internal void PoblarDB()
         {
             try
             {
                 #region Registro de socios.
-                socioService.RegistrarSocio("Damian", "Bruque", 1,true,0);
-                socioService.RegistrarSocio("Juan", "Perez", 2, true, 400);
-                socioService.RegistrarSocio("Jose","Trelles", 3,false,200);
+                //socioService.RegistrarSocio("Damian", "Bruque", 1,true,0);
+                //socioService.RegistrarSocio("Juan", "Perez", 2, true, 400);
+                //socioService.RegistrarSocio("Jose","Trelles", 3,false,200);
                 #endregion
                 #region Registro de libros.
                 libroService.AgregarLibro("aventura001", "Viaje al centro de la tierra", "Julio Verne");
@@ -68,7 +74,8 @@ namespace Views.src
                 MessageBox.Show($"Error: {except.Message}");
             }
         }
-
+        */
+        /*
         internal void DevolverUnEjemplarCualquieraDeUnSocioCualquiera()
         {
             try
@@ -88,7 +95,6 @@ namespace Views.src
                 MessageBox.Show($"Error: {except.Message}");
             }
         }
-
         internal void AgregarLibroConValoresInvalidos()
         {
             try
@@ -128,6 +134,8 @@ namespace Views.src
                 MessageBox.Show($"Error: {except.Message}");
             }
         }
+        */
+        /*
         internal void PrestamosSocioVIP()
         {
             try
@@ -143,7 +151,8 @@ namespace Views.src
                 MessageBox.Show($"Error: {except.Message}");
             }
         }
-        
+        */
+        /*
         internal List<EjemplarDTO> EjemplaresDisponiblesDe(string codigoISBN)
         {
             try
@@ -155,7 +164,7 @@ namespace Views.src
                 MessageBox.Show($"Error: {except.Message}");
                 return null;
             }
-        }
+        }*/
         internal List<PrestamoDTO> HistorialPrestamos()
         {
             try
@@ -168,54 +177,162 @@ namespace Views.src
                 return null;
             }
         }
+
+
         
 
         /// <summary>
-        /// Agrega un nuevo ejemlar de un libro a la biblioteca.
+        /// Registra un nuevo socio
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="numIdentificacion"></param>
+        /// <param name="esVIP"></param>
+        /// <param name="cuotaSocio"></param>
+        internal void RegistrarSocio(string nombre, string apellido, string numIdentificacion, bool esVIP, string cuotaSocio)
+        {
+            try
+            {
+                int numIdent;
+                bool validate;
+                int cuota;
+                validate = Int32.TryParse(numIdentificacion, out numIdent) ? true : throw new Exception("El DNI es invalido.");
+                validate = Int32.TryParse(cuotaSocio, out cuota) ? true : throw new Exception("El valor de cuota es invalido.");
+                socioService.RegistrarSocio(nombre,apellido,numIdent,esVIP,cuota);
+                MessageBox.Show($"Socio {nombre} registrado exitosamente");
+            }
+            catch (Exception except)
+            {
+                MessageBox.Show($"Error: {except.Message}");
+            }
+
+        }
+        
+        /// <summary>
+        /// Registra un nuevo libro
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="autor"></param>
+        /// <param name="codigoISBN"></param>
+        /// <exception cref="LibroAlreadyExistException"></exception>
+        internal void RegistrarLibro(string nombre, string autor, string codigoISBN)
+        {
+            try
+            {
+                libroService.AgregarLibro(codigoISBN, nombre, autor);
+                MessageBox.Show($"Libro {nombre} registrado exitosamente");
+            }
+            catch (Exception except)
+            {
+                MessageBox.Show($"Error: {except.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Agrega un nuevo ejemplar de un libro
         /// </summary>
         /// <param name="numEdicion"></param>
         /// <param name="ubicacion"></param>
+        /// <param name="nombreLibro"></param>
         /// <param name="codigoISBN"></param>
-        internal void AgregarEjemplar(int numEdicion, string ubicacion, string codigoISBN)
-        {
-            try 
-            {
-                ejemplarService.AgregarEjemplar(numEdicion, ubicacion, codigoISBN);
-            }
-            catch (Exception except)
-            {
-                MessageBox.Show($"Error: {except.Message}");
-            }
-        }
-        /// <summary>
-        /// Devuelve true si el libro tiene ejemplares disponibles y false si no tiene.
-        /// </summary>
-        /// <param name="codigoISBN"></param>
-        /// <returns></returns>
-        internal bool TieneEjemplaresDisponibles(string codigoISBN)
+        internal void RegistrarEjemplar(string numEdicion, string ubicacion, string codigoISBN, string nombreLibro) 
         {
             try
             {
-                return ejemplarService.TieneEjemplaresDisponibles(codigoISBN);
-            }
-            catch (Exception except)
-            {
-                MessageBox.Show($"Error: {except.Message}");
-                return false;
-            }
-        }
-        /// <summary>
-        /// Devuelve un ejemplar de un libro y lo inhabilita.
-        /// </summary>
-        /// <param name="codigoISBN"></param>
-        /// <returns></returns>
-        internal EjemplarDTO PrestarEjemplar(string codigoISBN,int numIdentificacionSocio)
-        {
-            try
-            {
-                if (TieneEjemplaresDisponibles(codigoISBN) && socioService.ExisteSocio(numIdentificacionSocio) && socioService.TieneLimiteDePrestamos(numIdentificacionSocio))
+                int numEdi;
+                bool validate;
+                validate = Int32.TryParse(numEdicion, out numEdi) ? true : throw new Exception("El numero de edicion es invalido.");
+                if (codigoISBN == null)
                 {
-                    EjemplarDTO ejemplarDTO = prestamoService.PrestarEjemplar(codigoISBN, numIdentificacionSocio);
+                    LibroDTO libro = libroService.BuscarLibro(nombreLibro);
+                    ejemplarService.AgregarEjemplar(numEdi, ubicacion, libro.CodigoISBN());
+                }
+                else
+                {
+                    validate = libroService.ExiteLibro(codigoISBN) ? true : throw new LibroNotFoundException($"con codigo ISBN {codigoISBN}");
+                    ejemplarService.AgregarEjemplar(numEdi, ubicacion, codigoISBN);
+                }
+                MessageBox.Show("Ejemplar agregado exitosamente");
+            }
+            catch (Exception except)
+            {
+                MessageBox.Show($"Error: {except.Message}");
+            }
+        }
+        
+
+        /// <summary>
+        /// Registra el prestamo de un ejemplar de un libro
+        /// </summary>
+        /// <param name="socioDNI"></param>
+        /// <param name="codigoISBN"></param>
+        /// <param name="nombreLibro"></param>
+        /// <exception cref="LibroNotFoundException"></exception>
+        internal void RegistrarPrestamo(string socioDNI, string codigoISBN, string nombreLibro, string numEjemplar)
+        {
+            try
+            {
+                int identSocio;
+                int numEjemp;
+                bool validate;
+                validate = Int32.TryParse(socioDNI, out identSocio) ? true : throw new Exception("El DNI es invalido.");
+                validate = Int32.TryParse(numEjemplar, out numEjemp) ? true : throw new Exception("El numero de ejemplar es invalido.");
+                string codigoISBNFinal = codigoISBN == null ? libroService.BuscarLibro(nombreLibro).CodigoISBN() : codigoISBN;
+                SocioDTO socio = socioService.ObtenerSocio(identSocio);
+                
+                
+                List<EjemplarDTO> ejemplares = codigoISBN == null || libroService.ExiteLibro(codigoISBNFinal) ? ejemplarService.EjemplaresExistentesDe(codigoISBNFinal) : throw new LibroNotFoundException(codigoISBNFinal);
+
+
+                EjemplarDTO ejemplar = ejemplares.FirstOrDefault(it => it.NumEdicion() == numEjemp) ?? throw new EjemplarNotExistException(numEjemp);// : throw new NoEjemplaresAvailablesException();
+                ejemplar = PrestarEjemplar(ejemplar, identSocio);
+                MessageBox.Show($"Ejemplar de {ejemplar.Libro().Nombre()} prestado exitosamente a {socio.Nombre()}");
+            }
+            catch (Exception except)
+            {
+                MessageBox.Show($"Error: {except.Message}");
+            }
+        }
+        
+        internal void VerificarDisponibilidadDeEjemplares(string nombreLibro, string codigoISBN)
+        {
+            try
+            {
+                bool validate;
+                if (codigoISBN == null)
+                {
+                    LibroDTO libro = libroService.BuscarLibro(nombreLibro);
+                    validate = ejemplarService.TieneEjemplaresDisponibles(libro.CodigoISBN()) ? true : throw new NoEjemplaresAvailablesException();
+                }
+                else
+                {
+                    validate = libroService.ExiteLibro(codigoISBN) ? true : throw new LibroNotFoundException($"con codigo ISBN {codigoISBN}");
+                    validate = ejemplarService.TieneEjemplaresDisponibles(codigoISBN) ? true : throw new NoEjemplaresAvailablesException();
+                }
+                MessageBox.Show("Hay Ejemplares disponibles");
+            }
+            catch(NoEjemplaresAvailablesException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception except)
+            {
+                MessageBox.Show($"Error: {except.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Retorna un ejemplar que se va a prestar de un libro y lo inhabilita.
+        /// </summary>
+        /// <param name="codigoISBN"></param>
+        /// <returns></returns>
+        private EjemplarDTO PrestarEjemplar(EjemplarDTO ejemplar,int numIdentificacionSocio)
+        {
+            if (!ejemplar.EstaPrestado()) 
+            {
+                if (socioService.TieneLimiteDePrestamos(numIdentificacionSocio))
+                {
+                    EjemplarDTO ejemplarDTO = prestamoService.PrestarEjemplar(ejemplar, numIdentificacionSocio);
                     return ejemplarDTO;
                 }
                 else
@@ -223,24 +340,66 @@ namespace Views.src
                     throw new PrestamoLimitReachedException();
                 }
             }
+            else
+            {
+                throw new EjemplarNotAvailableForLoanException();
+            }
+            
+        }
+
+
+
+        internal void RegistrarDevolucion(string socioDNI, string codigoISBN, string nombreLibro, string numEjemplar)
+        {
+            try
+            {
+                int identSocio;
+                int numEjemp;
+                bool validate;
+                validate = Int32.TryParse(socioDNI, out identSocio) ? true : throw new Exception("El DNI es invalido.");
+                validate = Int32.TryParse(numEjemplar, out numEjemp) ? true : throw new Exception("El numero de ejemplar es invalido.");
+                SocioDTO socio = socioService.ObtenerSocio(identSocio);
+                EjemplarDTO ejemplar;
+                if (codigoISBN == null)
+                {
+                    LibroDTO libro = libroService.BuscarLibro(nombreLibro);
+                    List<EjemplarDTO> ejemplares = ejemplarService.EjemplaresExistentesDe(libro.CodigoISBN());
+                    ejemplar = ejemplares.FirstOrDefault(it => it.NumEdicion() == numEjemp) ?? throw new EjemplarNotExistException(numEjemp);
+                    validate = ejemplar.EstaPrestado() ? true : throw new Exception("El ejemplar ya fue devuelto.");
+                    DevolverEjemplar(ejemplar, identSocio);
+                }
+                else
+                {
+                    List<EjemplarDTO> ejemplares = ejemplarService.EjemplaresExistentesDe(codigoISBN);
+                    ejemplar = ejemplares.FirstOrDefault(it => it.NumEdicion() == numEjemp) ?? throw new EjemplarNotExistException(numEjemp);
+                    validate = ejemplar.EstaPrestado() ? true : throw new Exception("El ejemplar ya fue devuelto.");
+                    DevolverEjemplar(ejemplar, identSocio);
+                }
+                MessageBox.Show($"Ejemplar de {ejemplar.Libro().Nombre()} devuelto exitosamente");
+            }
             catch (Exception except)
             {
                 MessageBox.Show($"Error: {except.Message}");
-                return null;
             }
         }
+
+
         /// <summary>
         /// Rehabilita ejemplar para que pueda ser prestado.
         /// </summary>
         /// <param name="ejemplar"></param>
         /// <param name="numIdentificacionSocio"></param>
-        internal void DevolverEjemplar(EjemplarDTO ejemplar,int numIdentificacionSocio)
+        private void DevolverEjemplar(EjemplarDTO ejemplar,int numIdentificacionSocio)
         {
             try
             {
-                if (socioService.ExisteSocio(numIdentificacionSocio) && ejemplarService.ExisteEjemplar(ejemplar.Libro().CodigoISBN(), ejemplar.NumEdicion()))
+                if (ejemplarService.ExisteEjemplar(ejemplar.Libro().CodigoISBN(), ejemplar.NumEdicion()))
                 {
                     prestamoService.DevolverEjemplar(ejemplar.NumEdicion(), ejemplar.Libro().CodigoISBN(), numIdentificacionSocio);
+                }
+                else
+                {
+                    throw new EjemplarNotExistException(ejemplar.NumEdicion());
                 }
             }
             catch (Exception except)
@@ -248,22 +407,7 @@ namespace Views.src
                 MessageBox.Show($"Error: {except.Message}");
             }
         }
-        /// <summary>
-        /// Devuele true si el socio puede retirar libros y false si no puede.
-        /// </summary>
-        /// <param name="numIdentificacionSocio"></param>
-        /// <returns></returns>
-        internal bool PuedeRetirarLibros(int numIdentificacionSocio)
-        {
-            try
-            {
-                return socioService.TieneLimiteDePrestamos(numIdentificacionSocio);
-            }
-            catch (Exception except)
-            {
-                MessageBox.Show($"Error: {except.Message}");
-                return false;
-            }
-        }
+
+
     }
 }

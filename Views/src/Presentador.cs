@@ -34,142 +34,6 @@ namespace Views.src
         }
 
 
-        /*
-        internal void PoblarDB()
-        {
-            try
-            {
-                #region Registro de socios.
-                //socioService.RegistrarSocio("Damian", "Bruque", 1,true,0);
-                //socioService.RegistrarSocio("Juan", "Perez", 2, true, 400);
-                //socioService.RegistrarSocio("Jose","Trelles", 3,false,200);
-                #endregion
-                #region Registro de libros.
-                libroService.AgregarLibro("aventura001", "Viaje al centro de la tierra", "Julio Verne");
-                libroService.AgregarLibro("drama001", "Cuentos de locura, amor y muerte", "Horacio Quiroga");
-                libroService.AgregarLibro("fantasia001","Harry Potter y el prisionero de Azcaban", "J.K. Rowlling");
-                libroService.AgregarLibro("criminales001", "Crimenes sorprendentes de asesinos en serie","Ricardo Canaletti");
-                libroService.AgregarLibro("romance001", "Respirando Amor", "Soledad Simond");
-                libroService.AgregarLibro("criminales002", "El asesino hipocondriaco", "Juan Jacinto Muñoz Rengel");
-                libroService.AgregarLibro("filosofia001", "¿Para que sive la filosofia?", "Dario Sztajnszrajber");
-                #endregion
-                #region Registro ejemplares
-                AgregarEjemplar(1, "P1E1N3", "criminales001");
-                AgregarEjemplar(2, "P1E1N3", "criminales001");
-                
-                AgregarEjemplar(1, "P3E2N4", "aventura001");
-                AgregarEjemplar(2, "P3E2N4", "aventura001");
-                AgregarEjemplar(3, "P3E2N4", "aventura001");
-                
-                AgregarEjemplar(1, "P2E2N4", "drama001");
-                AgregarEjemplar(2, "P2E2N4", "drama001");
-                AgregarEjemplar(3, "P2E2N4", "drama001");
-                
-                AgregarEjemplar(1, "P4E3N5", "fantasia001");
-                AgregarEjemplar(2, "P4E3N5", "fantasia001");
-                #endregion
-            }
-            catch (Exception except)
-            {
-                MessageBox.Show($"Error: {except.Message}");
-            }
-        }
-        */
-        /*
-        internal void DevolverUnEjemplarCualquieraDeUnSocioCualquiera()
-        {
-            try
-            {
-                PrestamoDTO prestamo = HistorialPrestamos().FirstOrDefault(it => !it.EstaFinalizado());
-                if (prestamo != null)
-                {
-                    DevolverEjemplar(prestamo.Ejemplar(), prestamo.Socio().NumIdentificacion());
-                }
-                else
-                {
-                    MessageBox.Show("No hay prestamos pendientes");
-                }
-            }
-            catch (Exception except)
-            {
-                MessageBox.Show($"Error: {except.Message}");
-            }
-        }
-        internal void AgregarLibroConValoresInvalidos()
-        {
-            try
-            {
-                libroService.AgregarLibro(null, "", "");
-            }
-            catch (Exception except)
-            {
-                MessageBox.Show($"Error: {except.Message}");
-            }
-            try
-            {
-                libroService.AgregarLibro("codigo ISBN", "nombre", "");
-            }
-            catch (Exception except)
-            {
-                MessageBox.Show($"Error: {except.Message}");
-            }            
-            try
-            {
-                libroService.AgregarLibro("codigoISBN", "", "");                
-            }
-            catch (Exception except)
-            {
-                MessageBox.Show($"Error: {except.Message}");
-            }
-        }
-        internal void PrestamosSocioComun()
-        {
-            try
-            {
-                PrestarEjemplar("aventura001",3);
-                MessageBox.Show("Préstamo realizado con éxito");
-            }
-            catch (Exception except)
-            {
-                MessageBox.Show($"Error: {except.Message}");
-            }
-        }
-        */
-        /*
-        internal void PrestamosSocioVIP()
-        {
-            try
-            {
-                PrestarEjemplar("aventura001", 1);
-                PrestarEjemplar("fantasia001", 1);
-                PrestarEjemplar("aventura001", 1);
-                PrestarEjemplar("criminales001", 2);
-                MessageBox.Show("Préstamo realizado con éxito");
-            }
-            catch (Exception except)
-            {
-                MessageBox.Show($"Error: {except.Message}");
-            }
-        }
-        */
-        /*
-        internal List<EjemplarDTO> EjemplaresDisponiblesDe(string codigoISBN)
-        {
-            try
-            {
-                return ejemplarService.EjemplaresDisponiblesDe(codigoISBN);
-            }
-            catch (Exception except)
-            {
-                MessageBox.Show($"Error: {except.Message}");
-                return null;
-            }
-        }*/
- 
-
-
-        
-
         /// <summary>
         /// Registra un nuevo socio
         /// </summary>
@@ -288,17 +152,19 @@ namespace Views.src
             try
             {
                 bool validate;
-                if (codigoISBN == null)
+                ;
+                string codigoISBNFinal = codigoISBN == null ? libroService.BuscarLibro(nombreLibro).CodigoISBN() : codigoISBN;
+                List<EjemplarDTO> ejemplares = codigoISBN == null || libroService.ExiteLibro(codigoISBNFinal) ? ejemplarService.EjemplaresExistentesDe(codigoISBNFinal) : throw new LibroNotFoundException(codigoISBNFinal);
+                validate = ejemplarService.TieneEjemplaresDisponibles(codigoISBNFinal) ? true : throw new NoEjemplaresAvailablesException();
+                string mensaje = $"Hay Ejemplares disponibles de {ejemplares[0].Libro().Nombre()}:\n";
+                foreach (EjemplarDTO ejemplar in ejemplares)
                 {
-                    LibroDTO libro = libroService.BuscarLibro(nombreLibro);
-                    validate = ejemplarService.TieneEjemplaresDisponibles(libro.CodigoISBN()) ? true : throw new NoEjemplaresAvailablesException();
+                    if (!ejemplar.EstaPrestado())
+                    {
+                        mensaje += $" Ejemplar N°: {ejemplar.NumEdicion()} - Ubicacion: {ejemplar.Ubicacion()}\n";
+                    }
                 }
-                else
-                {
-                    validate = libroService.ExiteLibro(codigoISBN) ? true : throw new LibroNotFoundException($"con codigo ISBN {codigoISBN}");
-                    validate = ejemplarService.TieneEjemplaresDisponibles(codigoISBN) ? true : throw new NoEjemplaresAvailablesException();
-                }
-                MessageBox.Show("Hay Ejemplares disponibles");
+                MessageBox.Show(mensaje);
             }
             catch(NoEjemplaresAvailablesException ex)
             {

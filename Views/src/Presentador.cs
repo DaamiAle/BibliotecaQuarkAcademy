@@ -165,18 +165,7 @@ namespace Views.src
                 return null;
             }
         }*/
-        internal List<PrestamoDTO> HistorialPrestamos()
-        {
-            try
-            {
-                return prestamoService.HistorialPrestamos();
-            }
-            catch (Exception except)
-            {
-                MessageBox.Show($"Error: {except.Message}");
-                return null;
-            }
-        }
+ 
 
 
         
@@ -344,9 +333,7 @@ namespace Views.src
             {
                 throw new EjemplarNotAvailableForLoanException();
             }
-            
         }
-
 
 
         internal void RegistrarDevolucion(string socioDNI, string codigoISBN, string nombreLibro, string numEjemplar)
@@ -409,5 +396,20 @@ namespace Views.src
         }
 
 
+        
+        internal List<PrestamoDTO> ObtenerPrestamos()
+        {
+            try
+            {
+                List<PrestamoDTO> prestamos = prestamoService.HistorialPrestamos();
+                return prestamos;
+            }
+            catch (Exception except)
+            {
+                MessageBox.Show($"Error: {except.Message}");
+                return null;
+            }
+        }
+        
     }
 }

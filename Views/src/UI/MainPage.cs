@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataObjects.src;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -344,7 +345,21 @@ namespace Views.src.UI
 
         private void CargarHistorial()
         {
-            throw new NotImplementedException();
+            listView1.Items.Clear();
+
+            List<PrestamoDTO> prestamos = presentador.ObtenerPrestamos();
+            for (int i = 0; i < prestamos.Count; i++)
+            {
+                ListViewItem item = new();
+                item.Text = prestamos[i].Ejemplar().Libro().Nombre();
+                item.SubItems.Add(prestamos[i].Ejemplar().Libro().CodigoISBN());
+                item.SubItems.Add(prestamos[i].Ejemplar().NumEdicion().ToString());
+                item.SubItems.Add($"{prestamos[i].Socio().Nombre()} {prestamos[i].Socio().Apellido()} - DNI:{prestamos[i].Socio().NumIdentificacion()}");
+                item.SubItems.Add(prestamos[i].FechaPrestamo().ToString());
+                item.SubItems.Add(prestamos[i].EstaFinalizado() ? "Devuelto" : "Pendiente");
+                listView1.Items.Add(item);
+            }
+
         }
 
 
